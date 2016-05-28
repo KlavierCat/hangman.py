@@ -102,16 +102,12 @@ def get_secret(gamer):
 def verify_guess(letter, oldGuess, gamer):
     if gamer == "Y":
         letter = input("\nPLAYER 2: Introduce A letter, please ").upper()
-        while not letter.isalpha() or len(letter)!= 1 or letter in oldGuess:
-           letter = input("\nOops! Only one letter please, and it needs to be a new one. Try again: ").upper()
-        else:
-           return letter, oldGuess
     else:
         letter = input("\nIntroduce A letter, please ").upper()
-        while not letter.isalpha() or len(letter)!= 1 or letter in oldGuess:
-           letter = input("\nOops! Only one letter please, and it needs to be a new one. Try again: ").upper()
-        else:
-           return letter, oldGuess        
+    while not letter.isalpha() or len(letter)!= 1 or letter in oldGuess:
+        letter = input("\nOops! Only one letter please, and it needs to be a new one. Try again: ").upper()
+    else:
+        return letter, oldGuess        
 
 # check if the input of player 2 is contained in the secret word
 def check_guess(letter, secret, current):
